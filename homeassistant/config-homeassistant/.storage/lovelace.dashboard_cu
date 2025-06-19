@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_cu",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Salon",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "clock",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  }
+                },
+                {
+                  "show_current": true,
+                  "show_forecast": false,
+                  "type": "weather-forecast",
+                  "entity": "weather.forecast_maison",
+                  "forecast_type": "daily",
+                  "name": "Metéo"
+                },
+                {
+                  "type": "sensor",
+                  "entity": "sensor.temperature_salon_2",
+                  "graph": "line"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.humidite_salon_2",
+                  "detail": 1,
+                  "name": "Humidité Salon"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "switch.tv_salon",
+                  "icon": "mdi:youtube-tv",
+                  "name": "Télé Salon"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "switch.lampe_salon",
+                  "icon": "mdi:lightbulb",
+                  "name": "Lampe Salon"
+                },
+                {
+                  "type": "sensor",
+                  "entity": "sensor.niveau_citerne_eau",
+                  "graph": "line"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.gaz_salon_2",
+                  "detail": 1,
+                  "name": "Capteurs Gaz Cuisine ",
+                  "unit": "ppm"
+                },
+                {
+                  "show_state": true,
+                  "show_name": true,
+                  "camera_view": "auto",
+                  "fit_mode": "cover",
+                  "type": "picture-entity",
+                  "entity": "switch.brasseur_salon",
+                  "image": "https://demo.home-assistant.io/stub_config/bedroom.png"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Nouvelle section"
+                }
+              ]
+            }
+          ],
+          "type": "sections",
+          "max_columns": 4,
+          "cards": [],
+          "background": {
+            "opacity": 33,
+            "alignment": "center",
+            "size": "cover",
+            "repeat": "repeat",
+            "attachment": "fixed",
+            "image": "/api/image/serve/85b58722be7bbf026259a87939f10657/original"
+          },
+          "header": {
+            "card": {
+              "type": "markdown",
+              "content": "# Bonjour {{ user }}\nContrôlez votre maison depuis votre smartphone !✨🪄"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

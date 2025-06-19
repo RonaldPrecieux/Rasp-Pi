@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "minor_version": 5,
+  "key": "core.config_entries",
+  "data": {
+    "entries": [
+      {"created_at":"2025-05-09T15:59:25.198416+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"sun","entry_id":"01JTTWBQ0EF83FK8RVX8N49E3Q","minor_version":1,"modified_at":"2025-05-09T15:59:25.198437+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"import","subentries":[],"title":"Sun","unique_id":null,"version":1},
+      {"created_at":"2025-05-09T15:59:27.134185+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"bluetooth","entry_id":"01JTTWBRWYZXVN5J5JQT36HZPQ","minor_version":1,"modified_at":"2025-05-09T15:59:27.134202+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"integration_discovery","subentries":[],"title":"Raspberry Pi Foundation None (B8:27:EB:A5:6A:CC)","unique_id":"B8:27:EB:A5:6A:CC","version":1},
+      {"created_at":"2025-05-09T15:59:27.141637+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"go2rtc","entry_id":"01JTTWBRX540WXKW8TP747KCYB","minor_version":1,"modified_at":"2025-05-09T15:59:27.141654+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"system","subentries":[],"title":"go2rtc","unique_id":null,"version":1},
+      {"created_at":"2025-05-09T15:59:27.200545+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"backup","entry_id":"01JTTWBRZ09V9RBFW4S3QJR253","minor_version":1,"modified_at":"2025-05-09T15:59:27.200552+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"system","subentries":[],"title":"Backup","unique_id":null,"version":1}
+    ]
+  }
+}

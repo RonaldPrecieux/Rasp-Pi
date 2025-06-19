@@ -1,0 +1,7 @@
+# Variables globales (exemples)
+export INFLUXDB_URL="192.168.0.106"  # IP de votre PC
+export INFLUXDB_TOKEN="my-super-secret-auth-token"
+export INFLUXDB_ORG="CAECOSID"
+export INFLUXDB_BUCKET="monitoring"
+export GRAFANA_URL="http://${INFLUXDB_URL}:3000"
+# Ajoutez d'autres variables au besoin...

@@ -1,0 +1,36 @@
+version: '3'
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: homeassistant
+    restart: unless-stopped
+    volumes:
+      - /home/home_assistant/cacosid/homeassistant/config-homeassistant:/config
+    environment:
+      - TZ=Africa/Porto-Novo
+    network_mode: host
+    privileged: true
+
+  mqtt:
+    image: eclipse-mosquitto:latest
+    container_name: mosquitto
+    restart: unless-stopped
+    volumes:
+      - /home/home_assistant/cacosid/mqtt/data:/mosquitto/data
+      - /home/home_assistant/cacosid/mqtt/config:/mosquitto/config
+      - /home/home_assistant/cacosid/mqtt/log:/mosquitto/log
+    ports:
+      - 1883:1883  # MQTT default port
+      - 9001:9001  # WebSocket port (optionnel)
+
+  telegraf:
+    image: telegraf:latest
+    container_name: telegraf
+    restart: unless-stopped
+    volumes:
+      - ./telegraf/etc/telegraf.conf:/etc/telegraf/telegraf.conf
+    environment:
+      - TZ=Africa/Porto-Novo
+    network_mode: host  # Nécessaire pour collecter les métriques système
+    env_file:
+      - /home/home_assistant/cacosid/etc/cacosid_env
