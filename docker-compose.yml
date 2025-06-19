@@ -23,36 +23,36 @@ services:
       - 1883:1883  # MQTT default port
       - 9001:9001  # WebSocket port (optionnel)
 
-  influxdb:
-    image: influxdb:1.8
-    container_name: influxdb
-    restart: unless-stopped
-    volumes:
-      - /home/home_assistant/cacosid/influxdb/data:/var/lib/influxdb
-      - /home/home_assistant/cacosid/influxdb/config:/etc/influxdb
-    environment:
-      - TZ=Africa/Porto-Novo
-      - INFLUXDB_DB=telegraf
-      - INFLUXDB_ADMIN_USER=admin
-      - INFLUXDB_ADMIN_PASSWORD=adminpassword
-    ports:
-      - 8086:8086
+  # influxdb:
+  #   image: influxdb:1.8
+  #   container_name: influxdb
+  #   restart: unless-stopped
+  #   volumes:
+  #     - /home/home_assistant/cacosid/influxdb/data:/var/lib/influxdb
+  #     - /home/home_assistant/cacosid/influxdb/config:/etc/influxdb
+  #   environment:
+  #     - TZ=Africa/Porto-Novo
+  #     - INFLUXDB_DB=telegraf
+  #     - INFLUXDB_ADMIN_USER=admin
+  #     - INFLUXDB_ADMIN_PASSWORD=adminpassword
+  #   ports:
+  #     - 8086:8086
 
-  grafana:
-    image: grafana/grafana
-    container_name: grafana
-    restart: unless-stopped
-    volumes:
-      - /home/home_assistant/cacosid/grafana/data:/var/lib/grafana
-      - /home/home_assistant/cacosid/grafana/config:/etc/grafana
-    environment:
-      - TZ=Africa/Porto-Novo
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=adminpassword
-    ports:
-      - 3000:3000
-    depends_on:
-      - influxdb
+  # grafana:
+  #   image: grafana/grafana
+  #   container_name: grafana
+  #   restart: unless-stopped
+  #   volumes:
+  #     - /home/home_assistant/cacosid/grafana/data:/var/lib/grafana
+  #     - /home/home_assistant/cacosid/grafana/config:/etc/grafana
+  #   environment:
+  #     - TZ=Africa/Porto-Novo
+  #     - GF_SECURITY_ADMIN_USER=admin
+  #     - GF_SECURITY_ADMIN_PASSWORD=adminpassword
+  #   ports:
+  #     - 3000:3000
+  #   depends_on:
+  #     - influxdb
 
   telegraf:
     image: telegraf:latest
@@ -65,5 +65,4 @@ services:
     network_mode: host  # Nécessaire pour collecter les métriques système
     env_file:
       - /home/home_assistant/cacosid/etc/cacosid_env
-    depends_on:
-      - influxdb
+   
